@@ -1,17 +1,17 @@
 server:
-	./app/manage.py runserver
+	./ecommerce/manage.py runserver
 
 migration:
-	py ./app/manage.py makemigrations
+	py ./ecommerce/manage.py makemigrations
 
 migrate:
-	py ./app/manage.py migrate
+	py ./ecommerce/manage.py migrate
 
 shell:
-	py ./app/manage.py shell
+	py ./ecommerce/manage.py shell
 
 collectstatic:
-	py ./app/manage.py collectstatic
+	py ./ecommerce/manage.py collectstatic
 
 depedency:
 	py -m pip freeze > requirement.txt
@@ -32,6 +32,6 @@ dockerdown:
 	docker-compose down
 
 test:
-	docker-compose run --rm app sh -c "python manage.py test"
+	docker-compose run --rm ecommerce sh -c "python manage.py test"
 
 .phony: server migration migrate shell collectstatic depedency container shell test
